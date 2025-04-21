@@ -1,0 +1,29 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    background-color: #FFE353;
+    align-items: center;
+    font-weight: 700;
+}
+
+.navbar-right,.navbar-lang, .navbar-watchlist{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-right{
+    gap: 30px;
+}
+
+.navbar-lang img{
+    width: 10px;
+    height: 5px;
+}
+
+.navbar-watchlist img{
+    width: 30px;
+    height: 25px;
+}

@@ -1,0 +1,23 @@
+#search{
+    margin-top: 10px;
+    
+}
+#search input{
+    width: 82%;
+    border-radius: 5px;
+    height: 40px;
+    margin-right: 1%;
+    border: 2px solid #ccc;
+    outline: none;
+    padding-left: 4px;
+}
+#search button{
+    background-color: #FFE353;
+    border-radius: 5px;
+    height: 40px;
+    width: 10%;
+    border: 0;
+    white-space: nowrap; /* يمنع الكلمة "Search" تطلع لسطر تاني */
+  font-size: 1rem;
+  min-width: 60px;
+}

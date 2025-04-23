@@ -8,14 +8,13 @@ const List = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    axiosInstance
-      .get('/movie/now_playing', {
-        params: {
-          language: 'en-US',
-          region: 'US',
-        },
-      })
-      .then((res) => {
+    axiosInstance.get('/movie/now_playing', {
+      params: {
+        language: 'en-US',
+        region: 'US',
+      },
+    })
+      .then(res => {
         setMovies(res.data.results);
         console.log('success');
       })

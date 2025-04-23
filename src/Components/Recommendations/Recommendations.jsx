@@ -54,7 +54,9 @@ export const Recommendations = () => {
                     year: 'numeric',
                   })}
                 </p>
-                <img src={empty_heart} alt="wishlist icon" />
+                <Link to="/watchlist">
+                    <img src={empty_heart} alt="wishlist icon" />
+                  </Link>
               </div>
             </div>
           </div>

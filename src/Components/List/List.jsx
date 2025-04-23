@@ -48,8 +48,10 @@ const List = () => {
                       year: 'numeric',
                     })}
                   </p>
-                  <img src={empty_heart} alt="wishlist icon" />
-                </div>
+ <Link to="/watchlist">
+    <img src={empty_heart} alt="wishlist icon" />
+  </Link>
+                  </div>
               </div>
             </div>
           </Link>

@@ -2,6 +2,7 @@ import React from 'react'
 import './navbar.css'
 import arrow from '../../assets/arrow.png'
 import heart from '../../assets/heart.png'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -17,8 +18,10 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-watchlist">
-                <img src={heart} alt="" />
-                <p>watchlist</p>
+                 <Link to="/watchlist" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
+    <img src={heart} alt="" />
+    <p>watchlist</p>
+  </Link>
             </div>
       </div>
     </div>

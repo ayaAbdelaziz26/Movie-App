@@ -34,7 +34,7 @@ export const Recommendations = () => {
     <h2>Recommendations</h2>
     <div className="list-grid">
       {movies.map((movie) => (
-        <Link to={`/movie/${movie.id}`} key={movie.id} className="movie-card-link">
+        <Link to={`/movie-details/${movie.id}`} key={movie.id} className="movie-card-link">
           <div className="movie-card">
             <div className="poster-wrapper">
               <img

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // ✅ Add this
+import { Link } from 'react-router-dom'; //  Add this
 import axiosInstance from '../../axiosInstance';
 import './list.css';
 import empty_heart from '../../assets/empty-heart.png';

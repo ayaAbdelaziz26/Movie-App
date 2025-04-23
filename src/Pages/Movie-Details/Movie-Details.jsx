@@ -1,8 +1,14 @@
 import React from 'react'
+import { Details } from '../../Components/Details/Details'
+import { Recommendations } from '../../Components/Recommendations/Recommendations'
 
 const Movie_Details = () => {
   return (
-    <div>Movie_Details</div>
+    <>
+    <Details></Details>
+    
+    <Recommendations/>
+    </>
   )
 }
 

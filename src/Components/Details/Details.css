@@ -1,0 +1,105 @@
+.details-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 20px;
+  box-shadow: 0 0 10px #ddd;
+  max-width: 100%;
+  margin: 20px auto;
+  text-align: left;
+  gap: 2rem;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.details-poster-wrapper img {
+  border-radius: 15px;
+  width: 300px;
+}
+
+.details-info {
+  padding-left: 30px;
+  flex: 1;
+}
+
+.details-title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.details-release {
+  color: gray;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 15px 0 1.5rem 0;
+}
+
+.star-icon {
+  color: #ccc;
+}
+.star-icon.filled {
+  color: #ffc107;
+}
+
+.details-overview {
+  margin: 10px 0;
+  text-align: left;
+  line-height: 1.4rem;
+}
+
+.details-genre {
+  background: #FFE353;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin: 1rem 15px 1rem 0;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.about-movie {
+  margin: 5px 8rem 1rem 0;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.about-movie span {
+  margin: 5px 2rem 5px 0;
+}
+
+.prod-company-wrapper img {
+  margin: 1rem 0;
+  max-height: 40px;
+}
+
+.website-btn {
+  border: 1px solid #f3c403;
+  border-radius: 20px;
+  padding: 8px 20px;
+  margin-top: 1rem;
+  cursor: pointer;
+  background-color: white;
+}
+
+.fav-icon {
+  color: gold;
+  font-size: 1.5rem;
+  margin-left: auto;
+}
+
+.details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Remove this */
+.details-header div div {
+  display: flex;
+  justify-content: space-between;
+}

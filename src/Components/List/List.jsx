@@ -13,6 +13,7 @@ const List = () => {
       },
     })
       .then(res => {
+       
         setMovies(res.data.results);
         console.log('success');
       })

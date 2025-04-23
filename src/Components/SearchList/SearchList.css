@@ -1,0 +1,58 @@
+.rate {
+    position: absolute;
+    top: 284.5px;
+    left: 9px;
+    z-index: 6;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: conic-gradient(
+      green 0% 70%,
+      wheat 70% 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.rate-background{
+    background-color:black;
+    height: 58px;
+    width: 58px;
+    border-radius: 50%;
+    position: absolute;
+    top: 280px;
+    z-index: 5;
+    left: 5px;
+   
+}
+.rate-number {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.button-background{
+    background-color: yellow;
+    color: black;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    border: none;
+}
+.button-unclicked{
+    background-color: white;
+    color: black;
+    height: 40px;
+    width: 40px;
+    border: none;
+}
+.search-card{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}

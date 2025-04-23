@@ -1,5 +1,9 @@
 .list-container {
   padding: 2rem;
+  text-decoration: none;
+  max-width: 1300px;
+  align-self: center;
+  margin: 0 auto;
 }
 
 .list-container h2 {
@@ -8,13 +12,15 @@
   font-weight: 600;
   font-size: 32px;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .list-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); 
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); 
+  gap: 1rem;
   justify-content: center;
+  text-decoration: none;
 }
 
 .movie-card {
@@ -25,6 +31,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .movie-card:hover {
@@ -33,6 +40,7 @@
 
 .poster-wrapper {
   position: relative;
+  text-decoration: none;
 }
 
 .movie-poster {
@@ -40,6 +48,7 @@
   height: 350px;
   object-fit: cover;
   border-radius: 12px 12px 0 0;
+  text-decoration: none;
 }
 
 .rating-circle {
@@ -57,10 +66,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .movie-info {
   padding: 10px;
+  text-decoration: none;
 }
 
 .movie-title {
@@ -68,6 +79,8 @@
   font-weight: bold;
   margin: 0.5rem 0 0.25rem;
   text-align: left;
+  color: black;
+  text-decoration: none;
 }
 
 .movie-date-wish {
@@ -75,15 +88,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 5px;
+  text-decoration: none;
 }
 
 .movie-date {
   font-size: 0.8rem;
   color: gray;
+  text-decoration: none;
 }
 
 .movie-date-wish img {
   width: 25px;
   height: 23px;
   object-fit: contain;
+  text-decoration: none;
 }

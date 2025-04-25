@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'; //  Add this
 import axiosInstance from '../../axiosInstance';
 import './list.css';
+<<<<<<< HEAD
 // import empty_heart from '../../assets/empty-heart.png';
 import { useDispatch, useSelector } from "react-redux";
 import { addToWatchlist,removeFromWatchlist  } from '../../redux/inputslice'
@@ -14,6 +15,13 @@ const List = () => {
   const watchlist = useSelector((state) => state.input.watchlist);
 
 
+=======
+import empty_heart from '../../assets/empty-heart.png';
+import { useNavigate } from 'react-router-dom';
+const List = () => {
+  const [movies, setMovies] = useState([]);
+  const navigate = useNavigate();
+>>>>>>> 1a783115cd320e516bf927e618adc48aa3b114c8
   useEffect(() => {
     axiosInstance.get('/movie/now_playing', {
       params: {
@@ -35,8 +43,10 @@ const List = () => {
       <h2>Now Playing</h2>
       <div className="list-grid">
         {movies.map((movie) => (
-          <Link to={`/movie-details/${movie.id}`} key={movie.id} className="movie-card-link">
-            <div className="movie-card">
+            <div className="movie-card"
+            key={movie.id}
+            onClick={() => navigate(`/movie-details/${movie.id}`)}
+            style={{ cursor: 'pointer' }}>
               <div className="poster-wrapper">
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -76,7 +86,6 @@ const List = () => {
                   </div>
               </div>
             </div>
-          </Link>
         ))}
       </div>
     </div>

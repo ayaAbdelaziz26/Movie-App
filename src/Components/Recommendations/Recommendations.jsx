@@ -2,12 +2,22 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../../axiosInstance";
 import { Link } from 'react-router-dom'; //  Add this
-import empty_heart from '../../assets/empty-heart.png';
+// import empty_heart from '../../assets/empty-heart.png';
 import "./Recommendations.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addToWatchlist,removeFromWatchlist } from '../../redux/inputslice'
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 export const Recommendations = () => {
   const { id } = useParams();
   const [movies, setMovies] = useState([]);
+    const dispatch = useDispatch();
+    const watchlist = useSelector((state) => state.input.watchlist);
+
+  
 
   useEffect(() => {
     axiosInstance
@@ -54,9 +64,25 @@ export const Recommendations = () => {
                     year: 'numeric',
                   })}
                 </p>
-                <Link to="/watchlist">
-                    <img src={empty_heart} alt="wishlist icon" />
-                  </Link>
+         <button
+  onClick={(e) => {
+    e.preventDefault();
+    const isInWatchlist = watchlist.some((item) => item.id === movie.id);
+    if (isInWatchlist) {
+      dispatch(removeFromWatchlist(movie.id));
+    } else {
+      dispatch(addToWatchlist(movie));
+    }
+  }}
+  className="heart-btn"
+>
+  <FontAwesomeIcon
+    icon={watchlist.some((item) => item.id === movie.id) ? solidHeart : regularHeart}
+    style={{ color: watchlist.some((item) => item.id === movie.id) ? 'gold' : '#999' }}
+  />
+</button>
+
+
               </div>
             </div>
           </div>

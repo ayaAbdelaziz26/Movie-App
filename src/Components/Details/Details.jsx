@@ -4,10 +4,14 @@ import axiosInstance from "../../axiosInstance";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faHeart, faLink } from "@fortawesome/free-solid-svg-icons";
 import "./Details.css";
+// import { useDispatch, useSelector } from "react-redux";
+// import { addToWatchlist } from '../../redux/inputslice'
 
 export const Details = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
+    // const dispatch = useDispatch();
+
 
   useEffect(() => {
     axiosInstance

@@ -75,3 +75,20 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.empty-watchlist {
+  text-align: center;
+  padding: 40px;
+}
+
+.empty-img {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.back-home-btn {
+  background-color: #f0c14b;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}

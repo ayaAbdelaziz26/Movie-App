@@ -89,3 +89,13 @@
     width: 25px;
     height: 23px;
 }
+.heart-btn {
+  border: none; /* إزالة الحدود حول الزر */
+  background: transparent; /* جعل خلفية الزر شفافة */
+  outline: none; /* إزالة التأثيرات حول الزر عند التركيز */
+  cursor: pointer; /* تغيير المؤشر عند المرور فوق الزر */
+}
+
+.heart-btn img {
+  border: none; /* إزالة الحدود حول صورة القلب */
+}

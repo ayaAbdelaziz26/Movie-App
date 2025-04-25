@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../../axiosInstance";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faHeart, faLink } from "@fortawesome/free-solid-svg-icons";
+import full_heart from "../../assets/full_heart.png"; // استيراد صورة القلب المملوء
+import empty_heart from "../../assets/empty-heart.png"; // استيراد صورة القلب الفارغ
 import "./Details.css";
-// import { useDispatch, useSelector } from "react-redux";
-// import { addToWatchlist } from '../../redux/inputslice'
+import { useSelector } from "react-redux"; // استيراد useSelector
 
 export const Details = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
-    // const dispatch = useDispatch();
 
+  // استرجاع watchlist من redux
+  const watchlist = useSelector((state) => state.input.watchlist);
 
   useEffect(() => {
     axiosInstance
@@ -26,6 +26,9 @@ export const Details = () => {
 
   if (!movie) return <div>Loading...</div>;
 
+  // تحقق مما إذا كان الفيلم مضافًا إلى الـ watchlist
+  const isInWatchlist = watchlist.some((item) => item.id === movie.id);
+
   return (
     <div className="details-card">
       <div className="details-poster-wrapper">
@@ -38,7 +41,13 @@ export const Details = () => {
       <div className="details-info">
         <div className="details-header">
           <h1 className="details-title">{movie.original_title}</h1>
-          <FontAwesomeIcon icon={faHeart} className="fav-icon" />
+          {/* استخدام الصور بدلاً من FontAwesome */}
+          <img
+            src={isInWatchlist ? full_heart : empty_heart}
+            alt="heart"
+            className="fav-icon"
+            style={{ height: "30px", cursor: "pointer" }}
+          />
         </div>
         <p className="details-release">
           {new Date(movie.release_date).toLocaleDateString("en-US", {
@@ -50,13 +59,7 @@ export const Details = () => {
 
         <div className="rating">
           {[...Array(5)].map((_, i) => (
-            <FontAwesomeIcon
-              key={i}
-              icon={faStar}
-              className={`star-icon ${
-                i < Math.round(movie.vote_average / 2) ? "filled" : ""
-              }`}
-            />
+            <div key={i} className={`star-icon ${i < Math.round(movie.vote_average / 2) ? "filled" : ""}`} />
           ))}
           <span>{movie.vote_count}</span>
         </div>
@@ -83,19 +86,10 @@ export const Details = () => {
           </span>
         </div>
 
-        {/* <div className="prod-company-wrapper">
-          <img
-            src="../../../public/company.png"
-            alt={movie.title}
-            className="prod-company"
-          />
-        </div> */}
-
         <button
           className="website-btn"
           onClick={() => window.open(movie.homepage, "_blank")}
         >
-          <FontAwesomeIcon icon={faLink} style={{ marginRight: "8px" }} />
           Website
         </button>
       </div>

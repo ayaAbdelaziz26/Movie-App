@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import Movie_Details from './Pages/Movie-Details/Movie-Details';
 import WatchList from "./Components/WatchList/WatchList.jsx";
+import Search from './Components/Search/Search.jsx';
+import SearchPage from './Pages/Search/Search.jsx';
 
 const Home = lazy(() => import('./Pages/Home/Home'));
 
@@ -17,6 +19,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/movie-details/:id" element={<Movie_Details />} />
             <Route path="/watchlist" element={<WatchList/>}/>
+            <Route path='/search' element={<SearchPage/>}/>
             </Routes>
         </Suspense>
       </div>

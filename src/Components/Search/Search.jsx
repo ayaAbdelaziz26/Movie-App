@@ -24,6 +24,7 @@ const Search = () => {
       const filtered = res.data.results.filter((item) => {
         return item.backdrop_path !== null && item.original_title !== null;
       });
+      console.log(filtered)
       dispatch(getResults(filtered))
     });
     navigate('/search')

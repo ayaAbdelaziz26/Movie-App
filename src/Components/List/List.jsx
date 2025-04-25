@@ -2,26 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'; //  Add this
 import axiosInstance from '../../axiosInstance';
 import './list.css';
-<<<<<<< HEAD
 // import empty_heart from '../../assets/empty-heart.png';
 import { useDispatch, useSelector } from "react-redux";
 import { addToWatchlist,removeFromWatchlist  } from '../../redux/inputslice'
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-const List = () => {
-  const [movies, setMovies] = useState([]);
-  const dispatch = useDispatch();
-  const watchlist = useSelector((state) => state.input.watchlist);
-
-
-=======
 import empty_heart from '../../assets/empty-heart.png';
 import { useNavigate } from 'react-router-dom';
 const List = () => {
   const [movies, setMovies] = useState([]);
+  const dispatch = useDispatch();
+  const watchlist = useSelector((state) => state.input.watchlist);
   const navigate = useNavigate();
->>>>>>> 1a783115cd320e516bf927e618adc48aa3b114c8
+
+
   useEffect(() => {
     axiosInstance.get('/movie/now_playing', {
       params: {

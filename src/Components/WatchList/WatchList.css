@@ -1,9 +1,12 @@
 .watchlistt-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(500px, 1fr)); 
-  gap: 30px;
-  justify-content: center; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* موبايل وافتراضي */
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
 }
+
+/* الكارت */
 .moviee-card {
   display: flex;
   flex-direction: row;
@@ -13,10 +16,11 @@
   padding: 20px;
   align-items: center;
   gap: 20px;
-  height: 250px;
   width: 100%;
+  box-sizing: border-box;
 }
 
+/* الصورة */
 .moviee-posterr {
   width: 130px;
   height: 180px;
@@ -25,18 +29,21 @@
   flex-shrink: 0;
 }
 
+/* النصوص والمعلومات */
 .moviee-info {
   flex: 1;
-  min-width: 0; 
+  min-width: 0;
   overflow: hidden;
 }
+
 .moviee-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 8px;
+  flex-wrap: wrap;
 }
 
 .moviee-title h3 {
@@ -44,7 +51,7 @@
 }
 
 .favoritee {
-  font-size: 24px;
+  font-size: 22px;
   color: #f5c518;
 }
 
@@ -75,6 +82,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .empty-watchlist {
   text-align: center;
   padding: 40px;
@@ -91,4 +99,37 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* موبايل */
+@media (max-width: 768px) {
+  .moviee-card {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .moviee-posterr {
+    width: 100%;
+    height: auto;
+  }
+
+  .moviee-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .moviee-info {
+    width: 100%;
+  }
+}
+
+/* شاشة كبيرة (ديسكتوب) */
+@media (min-width: 1200px) {
+  .watchlistt-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 أعمدة */
+  }
 }
